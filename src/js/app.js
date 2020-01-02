@@ -1,26 +1,29 @@
+import { secretParagraph, secretButton } from './dom-loader.js';
+import '../css/main.css';
+import '../css/input-elements.css';
 var showSecret = false;
 
 secretButton.addEventListener('click', toggleSecretState);
 updateSecretParagraph();
 
 function toggleSecretState() {
-    showSecret = !showSecret;
-    updateSecretParagraph();
-    updateSecretButton()
+  showSecret = !showSecret;
+  updateSecretParagraph();
+  updateSecretButton();
 }
 
 function updateSecretButton() {
-    if (showSecret) {
-        secretButton.textContent = 'Hide the Secret';
-    } else {
-        secretButton.textContent = 'Show the Secret';
-    }
+  if (showSecret) {
+    secretButton.textContent = 'Hide the Secret';
+  } else {
+    secretButton.textContent = 'Show the Secret';
+  }
 }
 
 function updateSecretParagraph() {
-    if (showSecret) {
-        secretParagraph.style.display = 'block';
-    } else {
-        secretParagraph.style.display = 'none';
-    }
+  if (showSecret) {
+    secretParagraph.style.display = 'block';
+  } else {
+    secretParagraph.style.display = 'none';
+  }
 }
